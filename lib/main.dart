@@ -52,8 +52,9 @@ class _MyHomePageState extends State<MyHomePage>
           ),
         ],
       ),
-      body: ListView(
-        padding: EdgeInsets.only(left: 20.0),
+      body: Container(
+          // padding: EdgeInsets.only(left: 20.0),
+          child: Column(
         children: <Widget>[
           SizedBox(height: 15.0),
           Text('Categories',
@@ -92,23 +93,21 @@ class _MyHomePageState extends State<MyHomePage>
                       )),
                 )
               ]),
-              Container(
-                height: MediaQuery.of(context).size.height - 50.0,
+          Expanded(
+            child: Container(
                 width: double.infinity,
-                child: TabBarView(
-                  controller: _tabController,
-                  children: [
-                    CookiePage(),
-                    CookiePage(),
-                    CookiePage(),
-                  ]
-                )
-              )
+                child: TabBarView(controller: _tabController, children: [
+                  CookiePage(),
+                  CookiePage(),
+                  CookiePage(),
+                ])),
+          )
         ],
-      ),
-      floatingActionButton: FloatingActionButton(onPressed: () {},
-      backgroundColor: Color(0xFFF17532),
-      child: Icon(Icons.fastfood),
+      )),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Color(0xFFF17532),
+        child: Icon(Icons.fastfood),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomBar(),

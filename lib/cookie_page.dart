@@ -4,13 +4,13 @@ import 'package:fluttercookie/cookie_detail.dart';
 class CookiePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFFFCFAF8),
-      body: ListView(
+    return Container(
+      // backgroundColor: Color(0xFFFCFAF8),
+      child: ListView(
         children: <Widget>[
           SizedBox(height: 15.0),
           Container(
-              padding: EdgeInsets.only(right: 15.0),
+              padding: EdgeInsets.symmetric(horizontal: 5),
               width: MediaQuery.of(context).size.width - 30.0,
               height: MediaQuery.of(context).size.height - 50.0,
               child: GridView.count(
