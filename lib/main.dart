@@ -19,14 +19,11 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
-    with SingleTickerProviderStateMixin {
-  TabController _tabController;
+class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -53,7 +50,6 @@ class _MyHomePageState extends State<MyHomePage>
         ],
       ),
       body: Container(
-          // padding: EdgeInsets.only(left: 20.0),
           child: Column(
         children: <Widget>[
           SizedBox(height: 15.0),
@@ -93,24 +89,8 @@ class _MyHomePageState extends State<MyHomePage>
                       )),
                 )
               ]),
-          Expanded(
-            child: Container(
-                width: double.infinity,
-                child: TabBarView(controller: _tabController, children: [
-                  CookiePage(),
-                  CookiePage(),
-                  CookiePage(),
-                ])),
-          )
         ],
       )),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Color(0xFFF17532),
-        child: Icon(Icons.fastfood),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomBar(),
     );
   }
 }
